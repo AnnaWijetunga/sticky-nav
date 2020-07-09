@@ -55,18 +55,20 @@
 
 <script>
     const nav = document.querySelector('#main');
-    const topOfNav = nav.offsetTop;
+    let topOfNav = nav.offsetTop;
 
     // 
     function fixNav() {
-        console.log(topOfNav, window.scrollY);
+        // console.log(topOfNav, window.scrollY);
         // fixed nav is being added and remove
-        if(window.scrollY >= topOfNav) {
-            // give us however large the nav is - replace the space left by the fixed navbar
-            document.body.style.paddingTop = nav.offsetHeight;
-            document.body.style.paddingTop = 0;
+
+        // give us however large the nav is - replace the space left by the fixed navbar
+        if (window.scrollY >= topOfNav) {
+            document.body.style.paddingTop = nav.offsetHeight + 'px';
             document.body.classList.add('fixed-nav');
+        } else {
             document.body.classList.remove('fixed-nav');
+            document.body.style.paddingTop = 0;
         }
     }
    
