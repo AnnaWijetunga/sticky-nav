@@ -54,12 +54,17 @@
   </div>
 
 <script>
-    const nav = docoument.querySelector('#main');
+    const nav = document.querySelector('#main');
     const topOfNav = nav.offsetTop;
 
     // 
     function fixNav() {
-        console.log(topOfNav);
+        console.log(topOfNav, window.scrollY);
+        // fixed nav is being added and remove
+        if(window.scrollY >= topOfNav) {
+            document.body.classList.add('fixed-nav');
+            document.body.classList.remove('fixed-nav');
+        }
     }
    
     // 
