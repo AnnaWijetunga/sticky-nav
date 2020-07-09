@@ -62,6 +62,8 @@
         console.log(topOfNav, window.scrollY);
         // fixed nav is being added and remove
         if(window.scrollY >= topOfNav) {
+            // give us however large the nav is - replace the space left by the fixed navbar
+            document.body.style.paddingTop = nav.offsetHeight;
             document.body.classList.add('fixed-nav');
             document.body.classList.remove('fixed-nav');
         }
